@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+
+import PocketMarathonNavigator from "./Navigation/PocketMarathonNagivator";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Pocket Marathon</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return(
+      <PocketMarathonNavigator style={styles.container}/>
+  )
 }
 
 const styles = StyleSheet.create({
