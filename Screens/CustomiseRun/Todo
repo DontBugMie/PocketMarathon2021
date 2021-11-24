@@ -1,0 +1,17 @@
+todo:
+
+-add set amount of time (secs/mins/hours)
+    -3 buttons for the speeds
+-add given distance (metres/km/miles)
+
+
+-add speed
+
+
+
+
+design:
+
+- key value pairs e.g =>     { walk : 1min }
+
+- can loop over the key and the value at the same time asychronous

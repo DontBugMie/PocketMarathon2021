@@ -8,7 +8,7 @@ const HomeScreen = props => {
         <View style={styles.screen}>
             <Text>HomeScreen</Text>
             <Button title="go to NewRunScreen" onPress={() => { props.navigation.navigate({routeName: "NewRunScreen"})}}/>
-            <Button title="go to MenuScreen" onPress={() => { props.navigation.navigate({routeName: "MenuScreen"})}}/>
+            {/*<Button title="go to MenuScreen" onPress={() => { props.navigation.navigate({routeName: "MenuScreen"})}}/>*/}
         </View>
     )
 };

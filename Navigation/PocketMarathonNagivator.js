@@ -11,14 +11,11 @@ import RunHistoryIndividualItemScreen from '../Screens/RunHistoryIndividualItem/
 import RunHistoryScreen from '../Screens/RunHistory/RunHistoryScreen';
 import StartRunScreen from '../Screens/StartRun/StartRunScreen';
 import FinishRunScreen from '../Screens/FinishRunScreen/FinishRunScreen';
-import MenuScreen from "../Components/Menu/Menu";
+import CustomiseRunScreen from '../Screens/CustomiseRun/CustomiseRunScreen';
 
 const PocketMarathonNavigator = createStackNavigator({
     HomeScreen : {
         screen: HomeScreen
-    },
-    MenuScreen : {
-        screen: MenuScreen
     },
     CreateAccountScreen: {
         screen: CreateAccountScreen
@@ -28,6 +25,9 @@ const PocketMarathonNavigator = createStackNavigator({
     },
     NewRunScreen: {
         screen: NewRunScreen
+    },
+    CustomiseRunScreen :{
+        screen: CustomiseRunScreen
     },
     RunHistoryIndividualItemScreen: {
         screen: RunHistoryIndividualItemScreen
