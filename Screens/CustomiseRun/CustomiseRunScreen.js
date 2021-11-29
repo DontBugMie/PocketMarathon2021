@@ -5,7 +5,7 @@ const CustomiseRunScreen = props => {
     return (
         <View style={styles.screen}>
             <Text>NewRunScreen</Text>
-            <View>
+            <View style={styles.customiseRunScreenButtonsContainer}>
                 <Button title="Customise Run" onPress={() => { props.navigation.navigate({routeName: "CustomiseRunScreen"})}}/>
                 <Button title="Time"/>
                 <View style={styles.speedButtonsContainer}>
@@ -13,10 +13,18 @@ const CustomiseRunScreen = props => {
                         <Button title="Slow"/>
                     </View>
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainer2]}>
-                        <Button title="jog"/>
+                        <Button title="Jog"/>
                     </View>
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainer3]}>
                         <Button title="Sprint"/>
+                    </View>
+                </View>
+                <View style={[styles.addCancelButtonContainer]}>
+                    <View style={[styles.speedButtonContainer]}>
+                        <Button title="Add"/>
+                    </View>
+                    <View style={[styles.speedButtonContainer]}>
+                        <Button title="Cancel"/>
                     </View>
                 </View>
             </View>
@@ -40,6 +48,14 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         borderRadius: 5,
+    },
+    customiseRunScreenButtonsContainer: {
+        alignItems: 'center'
+    },
+    addCancelButtonContainer: {
+        display: "flex",
+        flexDirection: 'row',
+        alignContent: 'center'
     },
     speedButtonContainer1: {
         backgroundColor: 'green'
