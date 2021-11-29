@@ -2,6 +2,11 @@ import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
 const CustomiseRunScreen = props => {
+
+    const slowBtnPressed = () => {
+        console.log('heloo')
+    };
+
     return (
         <View style={styles.screen}>
             <Text>NewRunScreen</Text>
@@ -10,7 +15,7 @@ const CustomiseRunScreen = props => {
                 <Button title="Time"/>
                 <View style={styles.speedButtonsContainer}>
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainer1]}>
-                        <Button title="Slow"/>
+                        <Button title="Slow" onPress={slowBtnPressed}/>
                     </View>
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainer2]}>
                         <Button title="Jog"/>
