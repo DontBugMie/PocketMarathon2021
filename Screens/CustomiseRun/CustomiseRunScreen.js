@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 
 const CustomiseRunScreen = props => {
 
 
-    const [backgroundColorState, backgroundColorSetState] = useState('blue');
+    const [backgroundColorState, backgroundColorSetState] = useState('green');
     const [widthState, widthSetState] = useState()
+    const [text, onChangeText]= useState('put text here');
+    const [texth, onpresstexth] = useState(40)
 
-    let yellow = 'green'
+    let yellow = 'green';
+
 
     const slowBtnPressed = () => {
-        backgroundColorSetState('yellow')
+        backgroundColorSetState('yellow');
         // setState(yellow);
-        widthSetState('100%')
+        widthSetState('100%');
+
+        onpresstexth(30)
+
     };
 
     return (
@@ -27,6 +33,11 @@ const CustomiseRunScreen = props => {
 
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: backgroundColorState }, { width: widthState}]}>
                         <Button title="Slow" onPress={slowBtnPressed}/>
+                        <TextInput
+                            style={[styles.speedButtonContainerWalkOnPress, {height: texth }]}
+                            onChangeText={onChangeText}
+                            value={text}
+                        />
                     </View>
 
 
@@ -82,11 +93,14 @@ const styles = StyleSheet.create({
     speedButtonContainerWalk: {
         backgroundColor: 'green'
     },
+    speedButtonContainerWalkOnPress: {
+        backgroundColor: 'white',
+    },
     speedButtonContainer2: {
         backgroundColor: 'yellow'
     },
     speedButtonContainer3: {
-        backgroundColor: 'red'
+        backgroundColor: 'red',
     },
 });
 export default CustomiseRunScreen;
