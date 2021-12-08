@@ -1,10 +1,18 @@
-import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 const CustomiseRunScreen = props => {
 
+
+    const [backgroundColorState, backgroundColorSetState] = useState('blue');
+    const [lengthState, lengthSetState] = useState('100%')
+
+    let yellow = 'green'
+
     const slowBtnPressed = () => {
-        console.log('heloo')
+        backgroundColorSetState('yellow')
+        // setState(yellow);
+        lengthSetState('1%')
     };
 
     return (
@@ -14,9 +22,18 @@ const CustomiseRunScreen = props => {
                 <Button title="Customise Run" onPress={() => { props.navigation.navigate({routeName: "CustomiseRunScreen"})}}/>
                 <Button title="Time"/>
                 <View style={styles.speedButtonsContainer}>
-                    <View style={[styles.speedButtonContainer,styles.speedButtonContainer1]}>
+
+
+
+                    <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: backgroundColorState }, { length: lengthState}]}>
                         <Button title="Slow" onPress={slowBtnPressed}/>
                     </View>
+
+
+
+
+
+
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainer2]}>
                         <Button title="Jog"/>
                     </View>
@@ -62,7 +79,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: 'center'
     },
-    speedButtonContainer1: {
+    speedButtonContainerWalk: {
         backgroundColor: 'green'
     },
     speedButtonContainer2: {
