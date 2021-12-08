@@ -5,14 +5,14 @@ const CustomiseRunScreen = props => {
 
 
     const [backgroundColorState, backgroundColorSetState] = useState('blue');
-    const [widthState, widthSetState] = useState('100%')
+    const [widthState, widthSetState] = useState()
 
     let yellow = 'green'
 
     const slowBtnPressed = () => {
         backgroundColorSetState('yellow')
         // setState(yellow);
-        widthSetState('1%')
+        widthSetState('100%')
     };
 
     return (
