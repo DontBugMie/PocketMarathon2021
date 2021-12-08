@@ -5,14 +5,14 @@ const CustomiseRunScreen = props => {
 
 
     const [backgroundColorState, backgroundColorSetState] = useState('blue');
-    const [lengthState, lengthSetState] = useState('100%')
+    const [widthState, widthSetState] = useState('100%')
 
     let yellow = 'green'
 
     const slowBtnPressed = () => {
         backgroundColorSetState('yellow')
         // setState(yellow);
-        lengthSetState('1%')
+        widthSetState('1%')
     };
 
     return (
@@ -25,7 +25,7 @@ const CustomiseRunScreen = props => {
 
 
 
-                    <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: backgroundColorState }, { length: lengthState}]}>
+                    <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: backgroundColorState }, { width: widthState}]}>
                         <Button title="Slow" onPress={slowBtnPressed}/>
                     </View>
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     speedButtonContainer: {
         padding: '3%',
         margin: '2%',
-        width: '29%',
+        // width: '29%',
         borderColor: 'black',
         borderWidth: 1,
         borderRadius: 5,
