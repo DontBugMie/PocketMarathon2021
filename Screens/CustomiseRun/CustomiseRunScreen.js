@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
+import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, TouchableOpacityComponent} from 'react-native';
+
 
 const CustomiseRunScreen = props => {
 
@@ -10,6 +11,10 @@ const CustomiseRunScreen = props => {
     const [speedbtnWalkSecsTextInput, speedBtnWalkSetSecsTextInput]= useState('00');
     const [speedBtnWalkTextInputHeight, speedBtnWalkTextInputSetHeight] = useState(40);
 
+
+
+
+
     const slowBtnPressed = () => {
         speedBtnWalkBackgroundColorSetState('yellow');
         speedBtnWalkWidthSetState('100%');
@@ -18,10 +23,18 @@ const CustomiseRunScreen = props => {
 
     return (
         <View style={styles.screen}>
-            <Text>NewRunScreen</Text>
+
             <View style={styles.customiseRunScreenButtonsContainer}>
-                <Button title="Customise Run" onPress={() => { props.navigation.navigate({routeName: "CustomiseRunScreen"})}}/>
-                <Button title="Time"/>
+                <View style={styles.timerDistanceContainer}>
+                    <TouchableOpacity style={styles.timerDistanceBtnContainer}>
+                        <Button title="add timer"/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.timerDistanceBtnContainer}>
+                        <Button title="add distance"/>
+                    </TouchableOpacity>
+                </View>
+
+
                 <View style={styles.speedButtonsContainer}>
 
 
@@ -78,9 +91,8 @@ const CustomiseRunScreen = props => {
                 <View>
                     <Text>Run Plan</Text>
                     <View>
-                        <View>
-                            
-                        </View>
+
+                            <Text>{speedbtnWalkHoursTextInput}</Text>
                     </View>
                 </View>
             </View>
@@ -93,6 +105,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    timerDistanceContainer: {
+        flexDirection: 'row'
+    },
+    timerDistanceBtnContainer:{
+        borderWidth: 1,
+        borderRadius: 160,
+        margin: 5,
+        padding: 5,
     },
     speedButtonsContainer: {
         flexDirection: 'row'
