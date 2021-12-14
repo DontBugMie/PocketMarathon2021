@@ -26,7 +26,7 @@ const CustomiseRunScreen = props => {
 
             <View style={styles.customiseRunScreenButtonsContainer}>
                 <View style={styles.timerDistanceContainer}>
-                    <TouchableOpacity style={styles.timerDistanceBtnContainer}>
+                    <TouchableOpacity style={[styles.timerDistanceBtnContainer, Colors.MixedYellow]}>
                         <Button title="add timer"/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.timerDistanceBtnContainer}>
