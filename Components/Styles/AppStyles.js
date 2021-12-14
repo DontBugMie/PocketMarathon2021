@@ -15,8 +15,8 @@ const Colors = StyleSheet.create({
     },
     MixedYellow:{
         backgroundColor: "yellow"
-
-    },PrimaryPinkColor:{
+    },
+    PrimaryPinkColor:{
         backgroundColor: 'rgb(228,115,193)'
     },
     SecondaryPinkColor:{
