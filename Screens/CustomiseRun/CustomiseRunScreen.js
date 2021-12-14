@@ -3,22 +3,17 @@ import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 
 const CustomiseRunScreen = props => {
 
-
-    const [backgroundColorState, backgroundColorSetState] = useState('green');
-    const [widthState, widthSetState] = useState()
-    const [text, onChangeText]= useState('put text here');
-    const [texth, onpresstexth] = useState(40)
-
-    let yellow = 'green';
-
+    const [speedBtnWalkBackgroundColorState, speedBtnWalkBackgroundColorSetState] = useState('green');
+    const [speedBtnWalkWidthState, speedBtnWalkWidthSetState] = useState()
+    const [speedbtnWalkHoursTextInput, speedBtnWalkSetHoursTextInput]= useState('00');
+    const [speedbtnWalkMinsTextInput, speedBtnWalkSetMinsTextInput]= useState('00');
+    const [speedbtnWalkSecsTextInput, speedBtnWalkSetSecsTextInput]= useState('00');
+    const [speedBtnWalkTextInputHeight, speedBtnWalkTextInputSetHeight] = useState(40);
 
     const slowBtnPressed = () => {
-        backgroundColorSetState('yellow');
-        // setState(yellow);
-        widthSetState('100%');
-
-        onpresstexth(30)
-
+        speedBtnWalkBackgroundColorSetState('yellow');
+        speedBtnWalkWidthSetState('100%');
+        speedBtnWalkTextInputSetHeight(30);
     };
 
     return (
@@ -31,13 +26,31 @@ const CustomiseRunScreen = props => {
 
 
 
-                    <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: backgroundColorState }, { width: widthState}]}>
+                    <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: speedBtnWalkBackgroundColorState }, { width: speedBtnWalkWidthState}]}>
                         <Button title="Slow" onPress={slowBtnPressed}/>
-                        <TextInput
-                            style={[styles.speedButtonContainerWalkOnPress, {height: texth }]}
-                            onChangeText={onChangeText}
-                            value={text}
-                        />
+                        <View style={styles.speedBtnTimeDistanceTextContainer}>
+                            <TextInput
+                                style={[styles.speedButtonContainerWalkOnPress, styles.speedBtnTimeDistanceText, { height: speedBtnWalkTextInputHeight }]}
+                                onChangeText={speedBtnWalkSetHoursTextInput}
+                                placeholder={speedbtnWalkHoursTextInput}
+                            />
+                            <Text>
+                                :
+                            </Text>
+                            <TextInput
+                                style={[styles.speedButtonContainerWalkOnPress, styles.speedBtnTimeDistanceText, { height: speedBtnWalkTextInputHeight }]}
+                                onChangeText={speedBtnWalkSetMinsTextInput}
+                                placeholder={speedbtnWalkMinsTextInput}
+                            />
+                            <Text>
+                                :
+                            </Text>
+                            <TextInput
+                                style={[styles.speedButtonContainerWalkOnPress, styles.speedBtnTimeDistanceText, { height: speedBtnWalkTextInputHeight }]}
+                                onChangeText={speedBtnWalkSetSecsTextInput}
+                                placeholder={speedbtnWalkSecsTextInput}
+                            />
+                        </View>
                     </View>
 
 
@@ -45,12 +58,12 @@ const CustomiseRunScreen = props => {
 
 
 
-                    <View style={[styles.speedButtonContainer,styles.speedButtonContainer2]}>
-                        <Button title="Jog"/>
-                    </View>
-                    <View style={[styles.speedButtonContainer,styles.speedButtonContainer3]}>
-                        <Button title="Sprint"/>
-                    </View>
+                    {/*<View style={[styles.speedButtonContainer,styles.speedButtonContainer2]}>*/}
+                    {/*    <Button title="Jog"/>*/}
+                    {/*</View>*/}
+                    {/*<View style={[styles.speedButtonContainer,styles.speedButtonContainer3]}>*/}
+                    {/*    <Button title="Sprint"/>*/}
+                    {/*</View>*/}
                 </View>
                 <View style={[styles.addCancelButtonContainer]}>
                     <View style={[styles.speedButtonContainer]}>
@@ -58,6 +71,16 @@ const CustomiseRunScreen = props => {
                     </View>
                     <View style={[styles.speedButtonContainer]}>
                         <Button title="Cancel"/>
+                    </View>
+                </View>
+
+
+                <View>
+                    <Text>Run Plan</Text>
+                    <View>
+                        <View>
+                            
+                        </View>
                     </View>
                 </View>
             </View>
@@ -95,6 +118,16 @@ const styles = StyleSheet.create({
     },
     speedButtonContainerWalkOnPress: {
         backgroundColor: 'white',
+    },
+    speedBtnTimeDistanceTextContainer:{
+        flexDirection: 'row',
+        margin: 5,
+        justifyContent:'center'
+    },
+    speedBtnTimeDistanceText:{
+        padding: 1,
+        borderWidth: 1,
+        borderRadius: 5,
     },
     speedButtonContainer2: {
         backgroundColor: 'yellow'
