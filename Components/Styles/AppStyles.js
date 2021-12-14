@@ -14,9 +14,9 @@ const Colors = StyleSheet.create({
         backgroundColor: 'rgb(220,116,36)'
     },
     MixedYellow:{
-        backgroundImage: 'linear-gradient(to right, red , yellow)'
-    },
-    PrimaryPinkColor:{
+        backgroundColor: "yellow"
+
+    },PrimaryPinkColor:{
         backgroundColor: 'rgb(228,115,193)'
     },
     SecondaryPinkColor:{

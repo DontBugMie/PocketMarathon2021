@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, TouchableOpacityComponent} from 'react-native';
+import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
+import {Colors} from "../../Components/Styles/AppStyles";
 
 const CustomiseRunScreen = props => {
 
@@ -10,10 +12,6 @@ const CustomiseRunScreen = props => {
     const [speedbtnWalkMinsTextInput, speedBtnWalkSetMinsTextInput]= useState('00');
     const [speedbtnWalkSecsTextInput, speedBtnWalkSetSecsTextInput]= useState('00');
     const [speedBtnWalkTextInputHeight, speedBtnWalkTextInputSetHeight] = useState(40);
-
-
-
-
 
     const slowBtnPressed = () => {
         speedBtnWalkBackgroundColorSetState('yellow');
@@ -26,9 +24,12 @@ const CustomiseRunScreen = props => {
 
             <View style={styles.customiseRunScreenButtonsContainer}>
                 <View style={styles.timerDistanceContainer}>
-                    <TouchableOpacity style={[styles.timerDistanceBtnContainer, Colors.MixedYellow]}>
-                        <Button title="add timer"/>
-                    </TouchableOpacity>
+                    {/*<LinearGradient colors={Colors.MixedYellow}>*/}
+                        <TouchableOpacity style={[styles.timerDistanceBtnContainer, Colors.MixedYellow ]}>
+                            <Button title="add timer"/>
+                        </TouchableOpacity>
+                    {/*</LinearGradient>*/}
+
                     <TouchableOpacity style={styles.timerDistanceBtnContainer}>
                         <Button title="add distance"/>
                     </TouchableOpacity>
