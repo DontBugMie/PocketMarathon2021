@@ -3,6 +3,8 @@ import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity} from 'react
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {Colors} from "../../Components/Styles/AppStyles";
+import {MixedBlueColor} from "../../Components/Styles/AppStyles";
+import {MixedGreenColor} from "../../Components/Styles/AppStyles";
 
 const CustomiseRunScreen = props => {
 
@@ -24,17 +26,22 @@ const CustomiseRunScreen = props => {
 
             <View style={styles.customiseRunScreenButtonsContainer}>
                 <View style={styles.timerDistanceContainer}>
-                        <TouchableOpacity style={[styles.timerDistanceBtnContainer, Colors.MixedYellow ]}>
+                    <View style={styles.linearGradientStyleContainer}>
+                        <LinearGradient
+                            colors={MixedBlueColor}
+                            style={styles.linearGradientStyle}
+                        >
                             <Button title="add timer"/>
-                        </TouchableOpacity>
-                    <LinearGradient
-                        colors={['#4c669f', '#3b5998', '#192f6a']}>
-                        <Text>Sign in with Facebook</Text>
-                    </LinearGradient>
+                        </LinearGradient>
+                    </View>
 
-                    <TouchableOpacity style={styles.timerDistanceBtnContainer}>
-                        <Button title="add distance"/>
-                    </TouchableOpacity>
+                    <View style={styles.linearGradientStyleContainer}>
+                        <LinearGradient
+                            colors={MixedGreenColor}
+                            style={styles.linearGradientStyle}>
+                            <Button title="add distance"/>
+                        </LinearGradient>
+                    </View>
                 </View>
 
 
@@ -109,7 +116,24 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    customiseRunScreenButtonsContainer: {
+        alignItems: 'center'
+    },
     timerDistanceContainer: {
+        flexDirection: 'row'
+    },
+    linearGradientStyleContainer:{
+        borderRadius: 60,
+        borderWidth:1,
+        borderColor:'black',
+        textAlignVertical:'center',
+        overflow: 'hidden',
+        margin:5
+    },
+    linearGradientStyle:{
+        padding:10,
+    },
+    speedButtonsContainer: {
         flexDirection: 'row'
     },
     timerDistanceBtnContainer:{
@@ -118,9 +142,6 @@ const styles = StyleSheet.create({
         margin: 5,
         padding: 5,
     },
-    speedButtonsContainer: {
-        flexDirection: 'row'
-    },
     speedButtonContainer: {
         padding: '3%',
         margin: '2%',
@@ -128,9 +149,6 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         borderRadius: 5,
-    },
-    customiseRunScreenButtonsContainer: {
-        alignItems: 'center'
     },
     addCancelButtonContainer: {
         display: "flex",
