@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity} from 'react-native';
-
+import { LinearGradient } from 'expo-linear-gradient';
 
 import {Colors} from "../../Components/Styles/AppStyles";
 
@@ -27,6 +27,10 @@ const CustomiseRunScreen = props => {
                         <TouchableOpacity style={[styles.timerDistanceBtnContainer, Colors.MixedYellow ]}>
                             <Button title="add timer"/>
                         </TouchableOpacity>
+                    <LinearGradient
+                        colors={['#4c669f', '#3b5998', '#192f6a']}>
+                        <Text>Sign in with Facebook</Text>
+                    </LinearGradient>
 
                     <TouchableOpacity style={styles.timerDistanceBtnContainer}>
                         <Button title="add distance"/>
