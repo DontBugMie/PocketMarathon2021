@@ -14,33 +14,33 @@ import FinishRunScreen from '../Screens/FinishRunScreen/FinishRunScreen';
 import CustomiseRunScreen from '../Screens/CustomiseRun/CustomiseRunScreen';
 
 const PocketMarathonNavigator = createStackNavigator({
-    HomeScreen : {
-        screen: HomeScreen
-    },
-    CreateAccountScreen: {
-        screen: CreateAccountScreen
-    },
-    LoginScreen: {
-        screen: LoginScreen
-    },
-    NewRunScreen: {
-        screen: NewRunScreen
-    },
+    // HomeScreen : {
+    //     screen: HomeScreen
+    // },
+    // CreateAccountScreen: {
+    //     screen: CreateAccountScreen
+    // },
+    // LoginScreen: {
+    //     screen: LoginScreen
+    // },
+    // NewRunScreen: {
+    //     screen: NewRunScreen
+    // },
     CustomiseRunScreen :{
         screen: CustomiseRunScreen
     },
-    RunHistoryIndividualItemScreen: {
-        screen: RunHistoryIndividualItemScreen
-    },
-    RunHistoryScreen: {
-        screen: RunHistoryScreen
-    },
-    StartRunScreen: {
-        screen: StartRunScreen
-    },
-    FinishRunScreen: {
-        screen: FinishRunScreen
-    },
+    // RunHistoryIndividualItemScreen: {
+    //     screen: RunHistoryIndividualItemScreen
+    // },
+    // RunHistoryScreen: {
+    //     screen: RunHistoryScreen
+    // },
+    // StartRunScreen: {
+    //     screen: StartRunScreen
+    // },
+    // FinishRunScreen: {
+    //     screen: FinishRunScreen
+    // },
 });
 
 export default createAppContainer(PocketMarathonNavigator);

@@ -5,6 +5,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {MixedBlueColor} from "../../Components/Styles/AppStyles";
 import {MixedGreenColor} from "../../Components/Styles/AppStyles";
 
+import AddRunElement from "../../Components/AddPaceModule/RunElement";
+
 
 const CustomiseRunScreen = props => {
 
@@ -29,6 +31,7 @@ const CustomiseRunScreen = props => {
         timerDistanceContainerHide('none');
         speedButtonContainerShow('block');
         addCancelButtonContainerShow('block');
+
     };
 
 
@@ -64,10 +67,13 @@ const CustomiseRunScreen = props => {
                 </View>
                 </TouchableOpacity>
 
+
+                <AddRunElement g={'hello'}/>
+
+
+
+
                 <View style={styles.speedButtonsContainer}>
-
-
-
                     <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: speedBtnWalkBackgroundColorState }, { width: speedBtnWalkWidthState}, {display: speedButtonContainerHide}]}>
                         <Button title="Slow" onPress={slowBtnPressed}/>
                         <View style={styles.speedBtnTimeDistanceTextContainer}>
