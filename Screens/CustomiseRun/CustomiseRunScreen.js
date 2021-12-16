@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity} from 'react-native';
+import React, { useState, useRef } from 'react';
+import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, Animated} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {MixedBlueColor} from "../../Components/Styles/AppStyles";
@@ -29,7 +29,9 @@ const CustomiseRunScreen = props => {
         speedButtonContainerShow('block');
     };
 
+
     return (
+
         <View style={styles.screen}>
 
             <View style={styles.customiseRunScreenButtonsContainer}>
