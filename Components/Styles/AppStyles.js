@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 const MixedTextColor = ['rgb(95,83,125)', 'rgb(169,167,178)'];
 const MixedYellowColor = ['rgb(255,204,42)','rgb(220,116,36)'];
 const MixedPinkColor = ['rgb(228,115,193)', 'rgb(190,122,230)'];
-const MixedBlueColor = ['rgb(36,228,255)', 'rgb(60,120,215)'];
-const MixedGreenColor = ['rgb(41,209,33)', 'rgb(52,119,35)'];
+const MixedBlueColor = ['#E2F6FF','rgb(36,228,255)', '#00CCCC'];;
+const MixedGreenColor = ['#DDFFFF', '#00E800', '#30C702'];
 
 const Colors = StyleSheet.create({
     PrimaryTextColor:{
