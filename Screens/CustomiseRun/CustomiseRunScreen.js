@@ -37,7 +37,7 @@ const CustomiseRunScreen = props => {
                     <View style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
                         <View style={styles.linearGradientStyleContainer}>
                             <LinearGradient
-                                elevation={5}s
+                                elevation={5}
                                 colors={MixedBlueColor}
                                 start={{ x: 0, y: 0}}
                                 end={{ x: 1, y: 0.9 }}
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     },
     linearGradientStyleContainer:{
         borderRadius: 60,
-        borderWidth:1,
+        borderWidth:0.5,
         borderColor: '#C0C0C0',
         textAlignVertical:'center',
         overflow: 'hidden',
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     timerDistanceBtnContainer:{
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderRadius: 160,
         margin: 5,
         padding: 5,
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
         margin: '2%',
         // width: '29%',
         borderColor: 'grey',
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderRadius: 5,
     },
     addCancelButtonContainer: {
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     },
     speedBtnTimeDistanceText:{
         padding: 1,
-        borderWidth: 1,
+        borderWidth: 0.5,
         borderRadius: 5,
     },
     speedButtonContainer2: {
