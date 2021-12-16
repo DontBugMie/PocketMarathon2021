@@ -17,6 +17,7 @@ const CustomiseRunScreen = props => {
 
     const [timerDistanceContainerShow, timerDistanceContainerHide] = useState('block');
     const [speedButtonContainerHide, speedButtonContainerShow] = useState('none');
+    const [addCancelButtonContainerHide, addCancelButtonContainerShow] = useState('none');
 
     const slowBtnPressed = () => {
         speedBtnWalkBackgroundColorSetState('yellow');
@@ -27,6 +28,7 @@ const CustomiseRunScreen = props => {
     const addTimerPressed = () => {
         timerDistanceContainerHide('none');
         speedButtonContainerShow('block');
+        addCancelButtonContainerShow('block');
     };
 
 
@@ -45,10 +47,9 @@ const CustomiseRunScreen = props => {
                                 end={{ x: 1, y: 0.9 }}
                                 style={styles.linearGradientStyle}
                             >
-                                <Button title="add timer"/>
+                                <Button title="Timer"/>
                             </LinearGradient>
                         </View>
-
 
 
                     <View style={styles.linearGradientStyleContainer}>
@@ -57,7 +58,7 @@ const CustomiseRunScreen = props => {
                             start={{ x: 0, y: 0}}
                             end={{ x: 1, y: 0.9 }}
                             style={styles.linearGradientStyle}>
-                            <Button title="add distance"/>
+                            <Button title="Distance"/>
                         </LinearGradient>
                     </View>
                 </View>
@@ -106,7 +107,7 @@ const CustomiseRunScreen = props => {
                     {/*    <Button title="Sprint"/>*/}
                     {/*</View>*/}
                 </View>
-                <View style={[styles.addCancelButtonContainer]}>
+                <View style={[styles.addCancelButtonContainer, {display: addCancelButtonContainerHide}]}>
                     <View style={[styles.speedButtonContainer]}>
                         <Button title="Add"/>
                     </View>
@@ -116,7 +117,7 @@ const CustomiseRunScreen = props => {
                 </View>
 
 
-                <View>
+                <View style={[{display: addCancelButtonContainerHide}]}>
                     <Text>Run Plan</Text>
                     <View>
 
@@ -132,13 +133,14 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     customiseRunScreenButtonsContainer: {
         alignItems: 'center'
     },
     timerDistanceContainer: {
         flexDirection: 'row',
+        justifyContent:'center',
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -146,7 +148,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.30,
         shadowRadius: 3,
-
         elevation: 8,
     },
     linearGradientStyleContainer:{
@@ -155,7 +156,8 @@ const styles = StyleSheet.create({
         borderColor: '#C0C0C0',
         textAlignVertical:'center',
         overflow: 'hidden',
-        margin:5
+        margin:5,
+        width: '40%',
     },
     linearGradientStyle:{
         padding:10,
@@ -182,6 +184,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: 'center'
     },
+
     speedButtonContainerWalk: {
         backgroundColor: 'green'
     },
