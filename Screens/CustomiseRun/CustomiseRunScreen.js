@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
-import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, Animated} from 'react-native';
+import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, Animated, FlatList} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {MixedBlueColor} from "../../Components/Styles/AppStyles";
@@ -36,13 +36,23 @@ const CustomiseRunScreen = props => {
 
     };
 
-    const value = useContext(RunPaceContext);
+    const {data, addRunPace} = useContext(RunPaceContext);
 
 
     return (
 
         <View style={styles.screen}>
-            <Text>{value}</Text>
+
+
+            <View>
+                <Button title="add RunPace" onPress={ addRunPace }/>
+            </View>
+
+            <FlatList data={data}
+                      keyExtractor={(RunPace) => RunPace.title}
+                      renderItem={({item}) => {
+                return <Text>{item.title} </Text>
+            }}/>
             <View style={styles.customiseRunScreenButtonsContainer}>
                 <TouchableOpacity onPress={addTimerPressed}>
                     <View style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
