@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, Animated} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -7,6 +7,8 @@ import {MixedGreenColor} from "../../Components/Styles/AppStyles";
 
 import AddRunElement from "../../Components/AddPaceModule/RunElement";
 
+
+import RunPaceContext from "../../Context/RunPaceContext";
 
 const CustomiseRunScreen = props => {
 
@@ -34,11 +36,13 @@ const CustomiseRunScreen = props => {
 
     };
 
+    const value = useContext(RunPaceContext);
+
 
     return (
 
         <View style={styles.screen}>
-
+            <Text>{value}</Text>
             <View style={styles.customiseRunScreenButtonsContainer}>
                 <TouchableOpacity onPress={addTimerPressed}>
                     <View style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
