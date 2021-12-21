@@ -1,8 +1,9 @@
+import React from  'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createDrawerNavigator } from 'react-navigation-drawer';
-
+import {RunProvider} from "../Context/RunPaceContext";
 import HomeScreen from '../Screens/Home/HomeScreen.js';
 import CreateAccountScreen from '../Screens/CreateAccount/CreateAccountScreen';
 import LoginScreen from '../Screens/Login/LoginScreen';
@@ -43,6 +44,10 @@ const PocketMarathonNavigator = createStackNavigator({
     // },
 });
 
-export default createAppContainer(PocketMarathonNavigator);
+const PocketMarathonNavigatorApplication = createAppContainer(PocketMarathonNavigator);
 
-
+export default () => {
+    return ( <RunProvider>
+        <PocketMarathonNavigatorApplication/>
+    </RunProvider>
+    )}
