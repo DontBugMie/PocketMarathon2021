@@ -47,7 +47,5 @@ const PocketMarathonNavigator = createStackNavigator({
 const PocketMarathonNavigatorApplication = createAppContainer(PocketMarathonNavigator);
 
 export default () => {
-    return ( <RunProvider>
-        <PocketMarathonNavigatorApplication/>
-    </RunProvider>
+    return (<PocketMarathonNavigatorApplication/>
     )}
