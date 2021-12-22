@@ -9,6 +9,7 @@ import AddRunElement from "../../Components/AddPaceModule/RunElement";
 
 
 import RunPaceContext from "../../Context/RunPaceContext";
+import {Touchable} from "react-native-web";
 
 const CustomiseRunScreen = props => {
 
@@ -23,6 +24,9 @@ const CustomiseRunScreen = props => {
     const [speedButtonContainerHide, speedButtonContainerShow] = useState('none');
     const [addCancelButtonContainerHide, addCancelButtonContainerShow] = useState('none');
 
+    const [hideAddRunPaceBtn, showAddRunPaceBtn] = useState('none');
+
+
     const slowBtnPressed = () => {
         speedBtnWalkBackgroundColorSetState('yellow');
         speedBtnWalkWidthSetState('100%');
@@ -33,19 +37,20 @@ const CustomiseRunScreen = props => {
         timerDistanceContainerHide('none');
         speedButtonContainerShow('block');
         addCancelButtonContainerShow('block');
+        showAddRunPaceBtn('block');
 
     };
 
     const {data, addRunPace} = useContext(RunPaceContext);
 
 
-    return (
 
+
+    return (
         <View style={styles.screen}>
 
-
-            <View>
-                <Button title="add RunPace" onPress={ addRunPace }/>
+            <View style={{display: hideAddRunPaceBtn}}>
+                <Button title="add RunPace" onPress={ addRunPace } />
             </View>
 
             <FlatList data={data}
@@ -54,9 +59,8 @@ const CustomiseRunScreen = props => {
                 return <Text>{item.title} </Text>
             }}/>
             <View style={styles.customiseRunScreenButtonsContainer}>
-                <TouchableOpacity onPress={addTimerPressed}>
-                    <View style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
-                        <View style={styles.linearGradientStyleContainer}>
+                    <View  style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
+                        <TouchableOpacity onPress={addTimerPressed} style={styles.linearGradientStyleContainer}>
                             <LinearGradient
                                 elevation={5}
                                 colors={MixedBlueColor}
@@ -66,10 +70,10 @@ const CustomiseRunScreen = props => {
                             >
                                 <Button title="Timer"/>
                             </LinearGradient>
-                        </View>
+                        </TouchableOpacity>
 
 
-                    <View style={styles.linearGradientStyleContainer}>
+                    <TouchableOpacity style={styles.linearGradientStyleContainer}>
                         <LinearGradient
                             colors={MixedGreenColor}
                             start={{ x: 0, y: 0}}
@@ -77,9 +81,8 @@ const CustomiseRunScreen = props => {
                             style={styles.linearGradientStyle}>
                             <Button title="Distance"/>
                         </LinearGradient>
-                    </View>
+                    </TouchableOpacity>
                 </View>
-                </TouchableOpacity>
 
 
                 <AddRunElement g={'hello'}/>
@@ -156,7 +159,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     customiseRunScreenButtonsContainer: {
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:'yellow'
     },
     timerDistanceContainer: {
         flexDirection: 'row',
