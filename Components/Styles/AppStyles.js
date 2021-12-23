@@ -48,6 +48,13 @@ const Screens = StyleSheet.create({
     }
 });
 
+const PrimaryScreen = {
+    flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+}
+
 const Buttons = StyleSheet.create({
     PrimaryButton:{
         padding: '3%',
@@ -58,4 +65,4 @@ const Buttons = StyleSheet.create({
     }
 });
 
-export { MixedTextColor, MixedYellowColor, MixedPinkColor, MixedBlueColor, MixedGreenColor, Colors, Screens, Buttons,  };
+export { MixedTextColor, MixedYellowColor, MixedPinkColor, MixedBlueColor, MixedGreenColor, Colors, Screens, PrimaryScreen, Buttons,  };

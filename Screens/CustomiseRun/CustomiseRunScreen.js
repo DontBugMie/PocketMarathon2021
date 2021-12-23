@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import {MixedBlueColor} from "../../Components/Styles/AppStyles";
 import {MixedGreenColor} from "../../Components/Styles/AppStyles";
+import {PrimaryScreen} from "../../Components/Styles/AppStyles";
 
 import AddRunElement from "../../Components/AddPaceModule/RunElement";
 
@@ -47,7 +48,7 @@ const CustomiseRunScreen = props => {
 
 
     return (
-        <View style={styles.screen}>
+        <View style={PrimaryScreen}>
 
             <View style={{display: hideAddRunPaceBtn}}>
                 <Button title="add RunPace" onPress={ addRunPace } />
@@ -153,14 +154,8 @@ const CustomiseRunScreen = props => {
 };
 
 const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     customiseRunScreenButtonsContainer: {
         alignItems: 'center',
-        backgroundColor:'yellow'
     },
     timerDistanceContainer: {
         flexDirection: 'row',
