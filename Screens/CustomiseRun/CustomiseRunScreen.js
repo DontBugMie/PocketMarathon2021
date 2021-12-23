@@ -39,10 +39,9 @@ const CustomiseRunScreen = props => {
         speedButtonContainerShow('block');
         addCancelButtonContainerShow('block');
         showAddRunPaceBtn('block');
-
     };
 
-    const {data, addRunPace} = useContext(RunPaceContext);
+
 
 
 
@@ -50,15 +49,6 @@ const CustomiseRunScreen = props => {
     return (
         <View style={PrimaryScreen}>
 
-            <View style={{display: hideAddRunPaceBtn}}>
-                <Button title="add RunPace" onPress={ addRunPace } />
-            </View>
-
-            <FlatList data={data}
-                      keyExtractor={(RunPace) => RunPace.title}
-                      renderItem={({item}) => {
-                return <Text>{item.title} </Text>
-            }}/>
             <View style={styles.customiseRunScreenButtonsContainer}>
                     <View  style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
                         <TouchableOpacity onPress={addTimerPressed} style={styles.linearGradientStyleContainer}>
@@ -73,7 +63,6 @@ const CustomiseRunScreen = props => {
                             </LinearGradient>
                         </TouchableOpacity>
 
-
                     <TouchableOpacity style={styles.linearGradientStyleContainer}>
                         <LinearGradient
                             colors={MixedGreenColor}
@@ -86,7 +75,7 @@ const CustomiseRunScreen = props => {
                 </View>
 
 
-                <AddRunElement g={'hello'}/>
+                <AddRunElement g={'hello'} /*hideAddRunPaceBtn='none'*/ hideAddRunPaceBtn={hideAddRunPaceBtn}/>
 
 
 
@@ -182,7 +171,7 @@ const styles = StyleSheet.create({
         padding:10,
     },
     speedButtonsContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     timerDistanceBtnContainer:{
         borderWidth: 0.5,

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 
 const RunPaceContext = React.createContext();
 
