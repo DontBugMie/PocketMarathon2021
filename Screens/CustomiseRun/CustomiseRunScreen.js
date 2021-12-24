@@ -1,16 +1,11 @@
 import React, { useState, useRef, useContext } from 'react';
 import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity, Animated, FlatList} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
 import {MixedBlueColor} from "../../Components/Styles/AppStyles";
 import {MixedGreenColor} from "../../Components/Styles/AppStyles";
 import {PrimaryScreen} from "../../Components/Styles/AppStyles";
-
-import AddRunElement from "../../Components/AddPaceModule/RunElement";
-
-
-import RunPaceContext from "../../Context/RunPaceContext";
-import {Touchable} from "react-native-web";
+import PaceButton from "../../Components/PaceButton/PaceButton";
+import RunSummary from "../../Components/Modules/RunSummary/RunSummaryModule";
 
 const CustomiseRunScreen = props => {
 
@@ -74,8 +69,8 @@ const CustomiseRunScreen = props => {
                     </TouchableOpacity>
                 </View>
 
+                <PaceButton PaceButtonBackgroundColorOne='pink' PaceButtonBackgroundColorTwo='blue' PaceButtonTitle='Slow'/>
 
-                <AddRunElement g={'hello'} /*hideAddRunPaceBtn='none'*/ hideAddRunPaceBtn={hideAddRunPaceBtn}/>
 
 
 
@@ -132,12 +127,19 @@ const CustomiseRunScreen = props => {
 
                 <View style={[{display: addCancelButtonContainerHide}]}>
                     <Text>Run Plan</Text>
+                    <Text>{speedbtnWalkHoursTextInput}</Text>
                     <View>
 
                             <Text>{speedbtnWalkHoursTextInput}</Text>
                     </View>
                 </View>
             </View>
+
+            <RunSummary
+                titleSummary={'This is where the RunSummary goes:'}
+                hideAddRunPaceBtn={hideAddRunPaceBtn}
+                speedbtnWalkHoursTextInput={speedbtnWalkHoursTextInput}
+            />
         </View>
     )
 };
@@ -192,9 +194,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: 'center'
     },
-
     speedButtonContainerWalk: {
-        backgroundColor: 'green'
+        backgroundColor: 'green',
     },
     speedButtonContainerWalkOnPress: {
         backgroundColor: 'white',

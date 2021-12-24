@@ -14,7 +14,6 @@ export const RunProvider = ({children}) => {
         ]);
     };
 
-
     return <RunPaceContext.Provider value={{data: RunPace, addRunPace}}>
         {children}
     </RunPaceContext.Provider>

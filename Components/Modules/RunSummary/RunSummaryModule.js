@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { View, Text, StyleSheet, Button, FlatList } from 'react-native';
-import RunPaceContext from "../../Context/RunPaceContext";
-import {PrimaryScreen} from "../Styles/AppStyles";
+import RunPaceContext from "../../../Context/RunPaceContext";
+import {PrimaryScreen} from "../../Styles/AppStyles";
 
 const RunSummary = props => {
 

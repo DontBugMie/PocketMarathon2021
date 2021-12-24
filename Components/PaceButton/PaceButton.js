@@ -1,22 +1,32 @@
 import React, {useContext} from 'react';
-import { View, Text, StyleSheet, Button, ScrollView} from 'react-native';
+import { View, Text, StyleSheet, Button} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import {MixedBlueColor} from "../Styles/AppStyles";
 
 
 
 
-const SlowPaceButton = props => {
+const PaceButton = props => {
+
+    let pace = props.pace;
 
     return (
-        <ScrollView style={[styles.PaceButton]}>
-
-        </ScrollView>
+        <LinearGradient
+            elevation={5}
+            colors= {[props.PaceButtonBackgroundColorOne,props.PaceButtonBackgroundColorTwo]}
+            start={{ x: 0, y: 0}}
+            end={{ x: 1, y: 0.9 }}
+            style={styles.linearGradientStyle}
+        >
+            <Button title={props.PaceButtonTitle}/>
+        </LinearGradient>
     )
 };
 
 const styles = StyleSheet.create({
     PaceButton:{
-        backgroundColor: 'pink'
+        width: '40%'
     }
 });
 
-export default SlowPaceButton;
+export default PaceButton;
