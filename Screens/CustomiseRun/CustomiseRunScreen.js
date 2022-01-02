@@ -6,6 +6,7 @@ import {MixedGreenColor} from "../../Components/Styles/AppStyles";
 import {PrimaryScreen} from "../../Components/Styles/AppStyles";
 import PaceButton from "../../Components/PaceButton/PaceButton";
 import RunSummary from "../../Components/Modules/RunSummary/RunSummaryModule";
+import TimerPaceButtonsModule from "../../Components/Modules/PaceButtonsModules/TimerPaceButtonsModule";
 
 const CustomiseRunScreen = props => {
 
@@ -22,6 +23,8 @@ const CustomiseRunScreen = props => {
 
     const [hideAddRunPaceBtn, showAddRunPaceBtn] = useState('none');
 
+    const [hideTimerPaceButtonModule, showTimerPaceButtonModule] = useState('none');
+    const [hidePaceBtnsContainerVisibility, showPaceBtnsContainerVisibility]=useState(false)
 
     const slowBtnPressed = () => {
         speedBtnWalkBackgroundColorSetState('yellow');
@@ -29,24 +32,20 @@ const CustomiseRunScreen = props => {
         speedBtnWalkTextInputSetHeight(30);
     };
 
-    const addTimerPressed = () => {
+    const timerBtnPressed = () => {
         timerDistanceContainerHide('none');
         speedButtonContainerShow('block');
         addCancelButtonContainerShow('block');
         showAddRunPaceBtn('block');
+        showTimerPaceButtonModule('block');
+        showPaceBtnsContainerVisibility(true)
     };
-
-
-
-
-
 
     return (
         <View style={PrimaryScreen}>
-
             <View style={styles.customiseRunScreenButtonsContainer}>
                     <View  style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
-                        <TouchableOpacity onPress={addTimerPressed} style={styles.linearGradientStyleContainer}>
+                        <TouchableOpacity onPress={timerBtnPressed} style={styles.linearGradientStyleContainer}>
                             <LinearGradient
                                 elevation={5}
                                 colors={MixedBlueColor}
@@ -66,17 +65,21 @@ const CustomiseRunScreen = props => {
                             style={styles.linearGradientStyle}>
                             <Button title="Distance"/>
                         </LinearGradient>
-                    </TouchableOpacity>
+                    </TouchableOpacity> 
                 </View>
 
-                <PaceButton PaceButtonBackgroundColorOne='pink' PaceButtonBackgroundColorTwo='blue' PaceButtonTitle='Slow'/>
+
+                <TimerPaceButtonsModule paceBtnsContainerVisibility={hidePaceBtnsContainerVisibility} />
+            
+
+               
+                
 
 
 
 
-
-                <View style={styles.speedButtonsContainer}>
-                    <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: speedBtnWalkBackgroundColorState }, { width: speedBtnWalkWidthState}, {display: speedButtonContainerHide}]}>
+                {/* <View style={styles.speedButtonsContainer}> */}
+                    {/* <View style={[styles.speedButtonContainer,styles.speedButtonContainerWalk, { backgroundColor: speedBtnWalkBackgroundColorState }, { width: speedBtnWalkWidthState}, {display: speedButtonContainerHide}]}>
                         <Button title="Slow" onPress={slowBtnPressed}/>
                         <View style={styles.speedBtnTimeDistanceTextContainer}>
                             <TextInput
@@ -101,7 +104,7 @@ const CustomiseRunScreen = props => {
                                 placeholder={speedbtnWalkSecsTextInput}
                             />
                         </View>
-                    </View>
+                    </View> */}
 
 
 
@@ -114,7 +117,7 @@ const CustomiseRunScreen = props => {
                     {/*<View style={[styles.speedButtonContainer,styles.speedButtonContainer3]}>*/}
                     {/*    <Button title="Sprint"/>*/}
                     {/*</View>*/}
-                </View>
+                {/* </View> 
                 <View style={[styles.addCancelButtonContainer, {display: addCancelButtonContainerHide}]}>
                     <View style={[styles.speedButtonContainer]}>
                         <Button title="Add"/>
@@ -132,14 +135,15 @@ const CustomiseRunScreen = props => {
 
                             <Text>{speedbtnWalkHoursTextInput}</Text>
                     </View>
-                </View>
+                </View>*/}
             </View>
+            
 
-            <RunSummary
+            {/* <RunSummary
                 titleSummary={'This is where the RunSummary goes:'}
                 hideAddRunPaceBtn={hideAddRunPaceBtn}
                 speedbtnWalkHoursTextInput={speedbtnWalkHoursTextInput}
-            />
+            />  */}
         </View>
     )
 };
@@ -147,6 +151,7 @@ const CustomiseRunScreen = props => {
 const styles = StyleSheet.create({
     customiseRunScreenButtonsContainer: {
         alignItems: 'center',
+        top:'40%',
     },
     timerDistanceContainer: {
         flexDirection: 'row',

@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import {RunProvider} from "../PocketMarathon/Context/RunPaceContext";
+import {PocketMarathonProvider} from "../PocketMarathon/Context/RunPaceContext";
 
 import PocketMarathonNavigator from "./Navigation/PocketMarathonNagivator";
 export default function App() {
-  return(<RunProvider>
+  return(<PocketMarathonProvider>
       <PocketMarathonNavigator style={styles.container}/>
-      </RunProvider>
+      </PocketMarathonProvider>
   )
 }
 

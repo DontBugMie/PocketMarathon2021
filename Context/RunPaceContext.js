@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 
 const RunPaceContext = React.createContext();
 
-export const RunProvider = ({children}) => {
+export const PocketMarathonProvider = ({children}) => {
 
     // const RunPace = [{title: 'blog 1'},{title: 'blog 2'},{title: 'blog 3'}];
 

@@ -1,31 +1,46 @@
-import React, {useContext} from 'react';
-import { View, Text, StyleSheet, Button} from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Text, Button} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import {MixedBlueColor} from "../Styles/AppStyles";
-
-
-
 
 const PaceButton = props => {
 
-    let pace = props.pace;
-
     return (
-        <LinearGradient
+        <View style={styles.PaceButtonContainer}>
+            <LinearGradient
             elevation={5}
             colors= {[props.PaceButtonBackgroundColorOne,props.PaceButtonBackgroundColorTwo]}
             start={{ x: 0, y: 0}}
             end={{ x: 1, y: 0.9 }}
-            style={styles.linearGradientStyle}
+            style={[styles.linearGradientStyle, styles.PaceButton]}
         >
-            <Button title={props.PaceButtonTitle}/>
+            <Text style={styles.PaceButtonText}>{props.PaceButtonTitle}</Text>
+            {/*might need to get rid of this line as might not be useful */}
+            <Button title={props.PaceButtonTitle}/> 
         </LinearGradient>
+        </View>
+        
     )
 };
 
 const styles = StyleSheet.create({
+    PaceButtonContainer: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 3,
+        elevation: 8,
+        height: '15%',
+    },
     PaceButton:{
-        width: '40%'
+        borderRadius: 50,
+    },
+    PaceButtonText:{
+        textAlign: 'center',
+        lineHeight: 100,
+        fontSize: 20
     }
 });
 
