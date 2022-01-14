@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import {PocketMarathonProvider} from "../PocketMarathon/Context/RunPaceContext";
+import {PocketMarathonProvider} from "../PocketMarathon1Context/RunPaceContext";
 
 import PocketMarathonNavigator from "./Navigation/PocketMarathonNagivator";
 export default function App() {
