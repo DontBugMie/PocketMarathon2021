@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button} from 'react-native';
+import { View, StyleSheet, Text} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {PrimaryTextColor} from "../Styles/AppStyles";
 
 const PaceButton = props => {
+
+
+    // need to work out how to close the first modal in order to see the second modal 
 
     return (
         <View style={[styles.PaceButtonContainer, styles.PaceButton]}>
