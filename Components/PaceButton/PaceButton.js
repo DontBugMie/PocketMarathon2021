@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, StyleSheet, Text} from 'react-native';
+import React, {useState} from 'react';
+import { View, StyleSheet, Text, TextInput} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import {PrimaryTextColor} from "../Styles/AppStyles";
@@ -7,20 +7,46 @@ import {PrimaryTextColor} from "../Styles/AppStyles";
 const PaceButton = props => {
 
 
-    // need to work out how to close the first modal in order to see the second modal 
+    // need to add an "add" "cancel button"
+    // pressing add/ cancell will both bring pacebtton back to the front
+    //might need to add commented out stuff again
+
+    const [showPaceButton, hidePaceButton] = useState('1');
+
+
+    const hidePaceButtonFunc = ( ) => {
+        hidePaceButton('-1');
+    };
+
+   
 
     return (
-        <View style={[styles.PaceButtonContainer, styles.PaceButton]}>
-            <TouchableOpacity onPress={props.PaceButtonPressedFunc} style={[styles.PaceButton]}>
+        <View style={[styles.PaceButtonContainer]}>
+            <View style={[styles.PaceButtonIncludingTextInput, {backgroundColor: 'pink', zIndex: showPaceButton}]}>
+                <TouchableOpacity onPress={hidePaceButtonFunc} style={[styles.PaceButton]}>
+                        <LinearGradient
+                        elevation={5}
+                        colors= {[props.PaceButtonBackgroundColorOne,props.PaceButtonBackgroundColorTwo]}
+                        start={{ x: 0, y: 0}}
+                        end={{ x: 1, y: 0.9 }}
+                        style={[styles.linearGradientStyle, styles.PaceButton]}>
+                        <Text style={styles.PaceButtonText}>{props.PaceButtonTitle}</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
+            </View>
+
+            <View style={[styles.PaceButtonContainer, {backgroundColor: 'blue', position: 'absolute', /*zIndex: showPaceTextinputButton*/}]}>
+            <TouchableOpacity /*onPress={hidePaceTextinputButtonFunc}*/ style={[styles.PaceButton, styles.PaceButtonTextInput]}>
                     <LinearGradient
                     elevation={5}
                     colors= {[props.PaceButtonBackgroundColorOne,props.PaceButtonBackgroundColorTwo]}
                     start={{ x: 0, y: 0}}
                     end={{ x: 1, y: 0.9 }}
                     style={[styles.linearGradientStyle, styles.PaceButton]}>
-                    <Text style={styles.PaceButtonText}>{props.PaceButtonTitle}</Text>
+                    <TextInput style={styles.PaceButtonText}>{props.PaceButtonTitle}</TextInput>
                 </LinearGradient>
             </TouchableOpacity>
+            </View>
         </View>
     )
 };
@@ -39,6 +65,7 @@ const styles = StyleSheet.create({
     },
     PaceButton:{
         borderRadius: 50,
+        
     },
     PaceButtonText:{
         textAlign: 'center',
@@ -46,6 +73,9 @@ const styles = StyleSheet.create({
         lineHeight: 10,
         fontSize: 20,
         color: PrimaryTextColor
+    }, 
+    PaceButtonTextInput: {
+      
     }
 });
 
