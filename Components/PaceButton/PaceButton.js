@@ -13,16 +13,21 @@ const PaceButton = props => {
 
     const [showPaceButton, hidePaceButton] = useState('1');
 
-
     const hidePaceButtonFunc = ( ) => {
         hidePaceButton('-1');
+    };
+
+    const [showPaceTextInputBtn, hidePaceTextInputBtn] = useState('');
+
+    const hidePaceTextInputBtnFunc = ( ) => {
+        hidePaceTextInputBtn('-1');
     };
 
    
 
     return (
         <View style={[styles.PaceButtonContainer]}>
-            <View style={[styles.PaceButtonIncludingTextInput, {backgroundColor: 'pink', zIndex: showPaceButton}]}>
+            <View style={[ {backgroundColor: 'pink', zIndex: showPaceButton}]}>
                 <TouchableOpacity onPress={hidePaceButtonFunc} style={[styles.PaceButton]}>
                         <LinearGradient
                         elevation={5}
@@ -35,7 +40,7 @@ const PaceButton = props => {
                 </TouchableOpacity>
             </View>
 
-            <View style={[styles.PaceButtonContainer, {backgroundColor: 'blue', position: 'absolute', /*zIndex: showPaceTextinputButton*/}]}>
+            <View style={[styles.PaceButtonContainer, {backgroundColor: 'blue', position: 'absolute', zIndex: showPaceTextInputBtn}]}>
             <TouchableOpacity /*onPress={hidePaceTextinputButtonFunc}*/ style={[styles.PaceButton, styles.PaceButtonTextInput]}>
                     <LinearGradient
                     elevation={5}
