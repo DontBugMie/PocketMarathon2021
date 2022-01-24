@@ -42,6 +42,7 @@ const PaceButton = props => {
     const PaceTextInputHeight = 20;
     const PaceBtnTextInputHeight = 100 - PaceTextInputHeight;
 
+
     // const speak = () => {
     //     const thingToSay = 'hello this is a very nice day today';
     //     Speech.speak(thingToSay);

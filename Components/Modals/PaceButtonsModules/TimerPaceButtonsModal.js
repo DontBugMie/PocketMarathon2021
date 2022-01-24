@@ -42,22 +42,20 @@ const TimerPaceButtonsModal = props => {
         console.log('hello')
         showPaceBtnTextInputModal(!hidePaceBtnTextInputModal);
         showPaceBtnTextInputModal(true);
-    
     };
-
+   
     return (
-        <View style={PrimaryScreen}>
-         <Modal animationType='fade' onRequestClose={()=>{showPaceBtnTextInputModal(!hidePaceBtnTextInputModal)}} visible={props.paceBtnsContainerVisibility}> 
-            <View style={[styles.paceBtnsModalView]}>
+        <View style={[PrimaryScreen, {backgroundColor:'pink', width: '1000%'}]}>
+         <Modal animationType='fade' onRequestClose={()=>{showPaceBtnTextInputModal(!hidePaceBtnTextInputModal)}} visible={props.paceBtnsContainerVisibility} styles={{backgroundColor:'yellow'}}> 
+            <View style={[styles.paceBtnsModalView, {backgroundColor:'green'}]}>
                 <Text style={styles.paceBtnsModalTitle}>Pick a Pace</Text>
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryGreenColor} PaceButtonBackgroundColorTwo={SecondaryGreenColor} PaceButtonTitle='Slow' PaceButtonPressedFunc={slowPaceButtonPressedFunc}/>
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryYellowColor} PaceButtonBackgroundColorTwo={SecondaryYellowColor} PaceButtonTitle='Jog' PaceButtonPressedFunc={jogPaceButtonPressedFunc}/>
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryPinkColor} PaceButtonBackgroundColorTwo={SecondaryPinkColor} PaceButtonTitle='Sprint' PaceButtonPressedFunc={sprintPaceButtonPressedFunc}/>
             </View>
             </Modal> 
-            <PaceButtonTextInputModal pace={'djklfaldjdl'} falsePaceBtnTextInputModalVisibility={hidePaceBtnTextInputModal} />
+            <PaceButtonTextInputModal pace={'djklfaldjdl'} falsePaceBtnTextInputModalVisibility={hidePaceBtnTextInputModal}/>
         </View>
-        
     )
 };
 

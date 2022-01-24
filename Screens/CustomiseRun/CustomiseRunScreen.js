@@ -18,8 +18,7 @@ const CustomiseRunScreen = props => {
 
     return (
         <View style={PrimaryScreen}>
-            <View style={styles.customiseRunScreenButtonsContainer}>
-                    <View  style={[styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
+            <View style={[styles.customiseRunScreenButtonsContainer, styles.timerDistanceContainer, {display: timerDistanceContainerShow}]}>
                         <TouchableOpacity onPress={timerBtnPressed} style={styles.linearGradientStyleContainer}>
                             <LinearGradient
                                 elevation={5}
@@ -32,20 +31,18 @@ const CustomiseRunScreen = props => {
                             </LinearGradient>
                         </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.linearGradientStyleContainer}>
-                        <LinearGradient
-                            colors={MixedGreenColor}
-                            start={{ x: 0, y: 0}}
-                            end={{ x: 1, y: 0.9 }}
-                            style={styles.linearGradientStyle}>
-                            <Button title="Distance"/>
-                        </LinearGradient>
-                    </TouchableOpacity> 
-                </View>
-                
-                <TimerPaceButtonsModal paceBtnsContainerVisibility={hidePaceBtnsContainerVisibility} />
+                        <TouchableOpacity style={styles.linearGradientStyleContainer}>
+                            <LinearGradient
+                                colors={MixedGreenColor}
+                                start={{ x: 0, y: 0}}
+                                end={{ x: 1, y: 0.9 }}
+                                style={styles.linearGradientStyle}>
+                                <Button title="Distance"/>
+                            </LinearGradient>
+                        </TouchableOpacity> 
             </View>
-            
+            <TimerPaceButtonsModal paceBtnsContainerVisibility={hidePaceBtnsContainerVisibility} styles={{display:'none', background:'yellow'}}/>
+          
 
             {/* <RunSummary
                 titleSummary={'This is where the RunSummary goes:'}
@@ -59,7 +56,6 @@ const CustomiseRunScreen = props => {
 const styles = StyleSheet.create({
     customiseRunScreenButtonsContainer: {
         alignItems: 'center',
-        top:'40%',
     },
     timerDistanceContainer: {
         flexDirection: 'row',

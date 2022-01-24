@@ -16,7 +16,7 @@ const PaceButtonTextInputModal = props => {
             <View style={[styles.paceBtnsModalView]}>
                 <Text>{props.pace}</Text>
                 <View>
-                    <TextInput></TextInput>
+                    <TextInput>hkjhkj</TextInput>
                     <TextInput></TextInput>
                     <TextInput></TextInput>
                 </View>
