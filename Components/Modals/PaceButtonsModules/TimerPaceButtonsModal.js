@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import { View, StyleSheet, Modal, Text } from 'react-native';
+import { View, StyleSheet, Modal, Text, Pressable, Keyboard } from 'react-native';
 import {PrimaryScreen} from "../../Styles/AppStyles";
 import {PrimaryTextColor} from "../../Styles/AppStyles";
 import { PrimaryGreenColor } from '../../Styles/AppStyles';
@@ -46,16 +46,17 @@ const TimerPaceButtonsModal = props => {
     };
 
     return (
-        <View style={PrimaryScreen}>
+        <Pressable onPress={Keyboard.dismiss} style={PrimaryScreen, {backgroundColor: 'pink'}} >
          <Modal animationType='fade' onRequestClose={()=>{showPaceBtnTextInputModal(!hidePaceBtnTextInputModal)}} visible={props.paceBtnsContainerVisibility}> 
-            <View style={[styles.paceBtnsModalView]}>
+            <Pressable onPress={Keyboard.dismiss} style={[styles.paceBtnsModalView] }>
                 <Text style={styles.paceBtnsModalTitle}>Pick a Pace</Text>
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryGreenColor} PaceButtonBackgroundColorTwo={SecondaryGreenColor} PaceButtonTitle='Slow' PaceButtonPressedFunc={slowPaceButtonPressedFunc}/>
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryYellowColor} PaceButtonBackgroundColorTwo={SecondaryYellowColor} PaceButtonTitle='Jog' PaceButtonPressedFunc={jogPaceButtonPressedFunc}/>
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryPinkColor} PaceButtonBackgroundColorTwo={SecondaryPinkColor} PaceButtonTitle='Sprint' PaceButtonPressedFunc={sprintPaceButtonPressedFunc}/>
-            </View>
+            </Pressable>
+            
             </Modal> 
-        </View>
+        </Pressable>
         
     )
 };

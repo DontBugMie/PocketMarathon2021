@@ -59,7 +59,6 @@ const CustomiseRunScreen = props => {
 const styles = StyleSheet.create({
     customiseRunScreenButtonsContainer: {
         alignItems: 'center',
-        top:'40%',
     },
     timerDistanceContainer: {
         flexDirection: 'row',
