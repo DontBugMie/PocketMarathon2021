@@ -48,13 +48,29 @@ const PaceButton = props => {
     //     Speech.getAvailableVoicesAsync();
     //     console.log(Speech.getAvailableVoicesAsync());
     // };
+
+    const [displayPaceBtnTextInputToggle, hidePaceBtnTextInputToggle] = useState("none");
+    const [displayPaceBtnTextToggle, hidePaceBtnTextToggle] = useState(props.PaceButtonTitle);
+
+
+    const paceBtnTextInputFunc = () => {
+        if( displayPaceBtnTextInputToggle === "none"){
+            hidePaceBtnTextInputToggle("block");
+            hidePaceBtnTextToggle("");
+            console.log("here1")
+        }else{
+            hidePaceBtnTextInputToggle("none");
+            hidePaceBtnTextToggle(props.PaceButtonTitle);
+            console.log("here2")
+        }
+    };
    
 
     return (
         <View>
             {/* <Button style={{color:'black'}} title="Press to hear some words" onPress={speak} /> */}
             <View style={[styles.PaceButtonContainer]}>
-                <TouchableOpacity onPress={hidePaceButtonFunc} style={[styles.PaceButton, {maxHeight: PaceBtnTextInputHeight}]}>
+                <TouchableOpacity onPress={paceBtnTextInputFunc} style={[styles.PaceButton, {maxHeight: PaceBtnTextInputHeight}]}>
                         <LinearGradient
                         elevation={5}
                         colors= {[props.PaceButtonBackgroundColorOne, props.PaceButtonBackgroundColorTwo]}
@@ -63,7 +79,7 @@ const PaceButton = props => {
                         style={[styles.linearGradientStyle, styles.PaceButton]}>
                         
 
-            <View style={[styles.PaceButtonContainer, styles.PaceButtonTextInputContainer, {position: 'absolute', flexDirection: 'row', top: '40%'}]}>
+            <View style={[styles.PaceButtonContainer, styles.PaceButtonTextInputContainer, {position: 'absolute', flexDirection: 'row', top: '40%', display: displayPaceBtnTextInputToggle }]}>
        
                             <TextInput placeholder='HR' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
                             <Text>:</Text>
@@ -72,13 +88,10 @@ const PaceButton = props => {
                             <TextInput placeholder='SECS' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
                 </View>
 
-
-
-
-                <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}>{props.PaceButtonTitle}</Text>
-
-
                 
+                <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}>{displayPaceBtnTextToggle}</Text>
+                
+               
                 </LinearGradient>
             </TouchableOpacity>
             </View>
@@ -110,6 +123,8 @@ const styles = StyleSheet.create({
         padding:50,
         color: PrimaryTextColor,
         justifyContent: 'center',
+        top: -10,
+        
     }, 
     PaceButtonTextInputContainer:{
         justifyContent:'center', 
