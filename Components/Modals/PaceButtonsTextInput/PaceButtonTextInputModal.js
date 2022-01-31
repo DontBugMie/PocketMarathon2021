@@ -12,16 +12,16 @@ const PaceButtonTextInputModal = props => {
     
     return (
         <View style={PrimaryScreen}>
-        <Modal animationType='none' onRequestClose={props.close} /*onShow={}*/ visible={props.falsePaceBtnTextInputModalVisibility} transparent={false}>
-            <View style={[styles.paceBtnsModalView]}>
-                <Text>{props.pace}</Text>
-                <View>
-                    <TextInput></TextInput>
-                    <TextInput></TextInput>
-                    <TextInput></TextInput>
+            <Modal animationType='none' onRequestClose={props.close} visible={props.falsePaceBtnTextInputModalVisibility} transparent={false}>
+                <View style={[styles.paceBtnsModalView]}>
+                    <Text>{props.pace}</Text>
+                    <View>
+                        <TextInput></TextInput>
+                        <TextInput></TextInput>
+                        <TextInput></TextInput>
+                    </View>
                 </View>
-            </View>
-        </Modal>
+            </Modal>
         </View>
     )
 };
