@@ -26,18 +26,18 @@ const PaceButton = props => {
 
 
 
-
-    const [showPaceButton, hidePaceButton] = useState('1');
+    const [modalVisible, setModalVisible] = useState(false);
+    // const [showPaceButton, hidePaceButton] = useState('1');
 
     const hidePaceButtonFunc = ( ) => {
-        hidePaceButton('-1');
+       console.log('pressed');
     };
 
-    const [showPaceTextInputBtn, hidePaceTextInputBtn] = useState('');
+    // const [showPaceTextInputBtn, hidePaceTextInputBtn] = useState('');
 
-    const hidePaceTextInputBtnFunc = ( ) => {
-        hidePaceTextInputBtn('-1');
-    };
+    // const hidePaceTextInputBtnFunc = ( ) => {
+    //     hidePaceTextInputBtn('-1');
+    // };
 
     const PaceTextInputHeight = 20;
     const PaceBtnTextInputHeight = 100 - PaceTextInputHeight;
@@ -53,36 +53,36 @@ const PaceButton = props => {
     return (
         <View>
             {/* <Button style={{color:'black'}} title="Press to hear some words" onPress={speak} /> */}
-            <View style={[{zIndex: showPaceButton}, styles.PaceButtonContainer]}>
+            <View style={[styles.PaceButtonContainer]}>
                 <TouchableOpacity onPress={hidePaceButtonFunc} style={[styles.PaceButton, {maxHeight: PaceBtnTextInputHeight}]}>
                         <LinearGradient
                         elevation={5}
-                        colors= {[props.PaceButtonBackgroundColorOne,props.PaceButtonBackgroundColorTwo]}
+                        colors= {[props.PaceButtonBackgroundColorOne, props.PaceButtonBackgroundColorTwo]}
                         start={{ x: 0, y: 0}}
                         end={{ x: 1, y: 0.9 }}
                         style={[styles.linearGradientStyle, styles.PaceButton]}>
-                        <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}>{props.PaceButtonTitle}</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
-            </View>
+                        
 
-            <View style={[styles.PaceButtonContainer, {position: 'absolute', zIndex: showPaceTextInputBtn}]}>
-            <TouchableOpacity onPress={hidePaceTextInputBtnFunc} style={[styles.PaceButton, {height: PaceBtnTextInputHeight}]}>
-                    <LinearGradient
-                    elevation={5}
-                    colors= {[props.PaceButtonBackgroundColorOne,props.PaceButtonBackgroundColorTwo]}
-                    start={{ x: 0, y: 0}}
-                    end={{ x: 1, y: 0.9 }}
-                    style={[styles.linearGradientStyle, styles.PaceButton, styles.PaceButtonText, styles.PaceButtonTextInputContainer, {fontSize: PaceTextInputHeight}]}>
-                            <TextInput placeholder='HR' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}></TextInput>
+            <View style={[styles.PaceButtonContainer, styles.PaceButtonTextInputContainer, {position: 'absolute', flexDirection: 'row', top: '40%'}]}>
+       
+                            <TextInput placeholder='HR' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
                             <Text>:</Text>
-                            <TextInput placeholder='MINS' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}></TextInput>
+                            <TextInput placeholder='MINS' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
                             <Text>:</Text>
-                            <TextInput placeholder='SECS' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}></TextInput>
+                            <TextInput placeholder='SECS' keyboardType="numeric" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
+                </View>
+
+
+
+
+                <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}>{props.PaceButtonTitle}</Text>
+
+
+                
                 </LinearGradient>
             </TouchableOpacity>
             </View>
-        </View>
+         </View>
     )
 };
 
@@ -112,8 +112,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     }, 
     PaceButtonTextInputContainer:{
-        flexDirection:'row',
-        justifyContent:'space-around',
+        justifyContent:'center', 
     },
     PaceButtonTextInput: {
         backgroundColor: 'white',
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
         textAlign:'center',
         textAlignVertical: 'center',
         alignContent: 'space-between',
-        width:'30%'
+        width:'35%'
         // transform: [{scaleY:1}, {translateX: 35}, {translateY: 45}]
     }
 });

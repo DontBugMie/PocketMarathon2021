@@ -9,7 +9,7 @@ import { SecondaryYellowColor } from '../../Styles/AppStyles';
 import { PrimaryPinkColor } from '../../Styles/AppStyles';
 import { SecondaryPinkColor } from '../../Styles/AppStyles';
 import PaceButton from "../../PaceButton/PaceButton";
-import PaceButtonTextInputModal from '../PaceButtonsTextInput/PaceButtonTextInputModal';
+
 
 
 const TimerPaceButtonsModal = props => {
@@ -55,7 +55,6 @@ const TimerPaceButtonsModal = props => {
                 <PaceButton PaceButtonBackgroundColorOne={PrimaryPinkColor} PaceButtonBackgroundColorTwo={SecondaryPinkColor} PaceButtonTitle='Sprint' PaceButtonPressedFunc={sprintPaceButtonPressedFunc}/>
             </View>
             </Modal> 
-            <PaceButtonTextInputModal pace={'djklfaldjdl'} falsePaceBtnTextInputModalVisibility={hidePaceBtnTextInputModal} />
         </View>
         
     )
