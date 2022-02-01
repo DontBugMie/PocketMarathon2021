@@ -49,45 +49,38 @@ const PaceButton = props => {
     };
    
     return (
-        <Pressable onPress={Keyboard.dismiss} 
-    >
-        {/* <Pressable onPress={Keyboard.dismiss}> */}
+        <Pressable onPress={Keyboard.dismiss}>
             {/* <Button style={{color:'black'}} title="Press to hear some words" onPress={speak} /> */}
             <View style={[styles.PaceButtonContainer, {minWidth:'102%'}]}>
                 <View  style={[styles.PaceButton, {maxHeight: PaceBtnTextInputHeight}]}>
                     <LinearGradient
-                    elevation={5}
+                    elevation={15}
                     colors= {[props.PaceButtonBackgroundColorOne, props.PaceButtonBackgroundColorTwo]}
                     start={{ x: 0, y: 0}}
                     end={{ x: 1, y: 0.9 }}
                     style={[styles.linearGradientStyle, styles.PaceButton, styles.PaceButtonText, styles.PaceButtonContainer, styles.PaceButtonTextInputContainer, {width:'95%'}]}>
-                    {/* <View style={[styles.PaceButtonContainer, styles.PaceButtonTextInputContainer,  ]}>  */}
                         <TextInput name={props.PaceButtonTitle + 'hr'} placeholder='HR' keyboardType="number-pad" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
                         <Text>:</Text>
                         <TextInput name={'mins'} placeholder='MINS' keyboardType="number-pad" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
                         <Text >:</Text>
                         <TextInput name={'secs'}  placeholder='SECS' keyboardType="number-pad" maxLength={2} multiline={false} style={[styles.PaceButtonTextInput, {height: PaceTextInputHeight}]}/>
-                    {/* </View> */}
-                {/* <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}></Text> */}
-                </LinearGradient>
-            </View>
+                    </LinearGradient>
+                </View>
             </View>
  
             <View style={[styles.PaceButtonContainer, {position: 'absolute', display:displayPaceBtnTextInputToggle}]}>
                 <TouchableOpacity onPress={paceBtnTextInputFunc} style={[styles.PaceButton, {maxHeight: PaceBtnTextInputHeight}]}>
                     <LinearGradient
-                    elevation={5}
+                    elevation={15}
                     colors= {[props.PaceButtonBackgroundColorOne, props.PaceButtonBackgroundColorTwo]}
                     start={{ x: 0, y: 0}}
                     end={{ x: 1, y: 0.9 }}
                     style={[styles.linearGradientStyle, styles.PaceButton]}>
-                    
-                <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}>{props.PaceButtonTitle}</Text>
+                    <Text style={[styles.PaceButtonText,{fontSize: PaceTextInputHeight}]}>{props.PaceButtonTitle}</Text>
                 </LinearGradient>
-            </TouchableOpacity>
+                </TouchableOpacity>
             </View>
-            {/* </Pressable> */}
-         </Pressable>
+        </Pressable>
     )
 };
 
@@ -97,11 +90,11 @@ const styles = StyleSheet.create({
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: 8,
         },
         shadowOpacity: 0.30,
         shadowRadius: 3,
-        elevation: 8,
+        elevation: 10,
         height: '15%',
         width:'100%',
         margin:5
