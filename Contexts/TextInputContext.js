@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 
-const RunPaceContext = React.createContext();
+const TextInputContext = React.createContext();
 
 export const PocketMarathonProvider = ({children}) => {
 
@@ -14,9 +14,9 @@ export const PocketMarathonProvider = ({children}) => {
         ]);
     };
 
-    return <RunPaceContext.Provider value={{data: RunPace, addRunPace}}>
+    return <TextInputContext.Provider value={{data: RunPace, addRunPace}}>
         {children}
-    </RunPaceContext.Provider>
+    </TextInputContext.Provider>
 };
 
-export default  RunPaceContext;
+export default  TextInputContext;
