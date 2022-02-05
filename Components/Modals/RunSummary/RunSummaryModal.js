@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 import { View, Text, StyleSheet, Button, FlatList } from 'react-native';
-import RunPaceContext from "../../../Context/RunPaceContext";
+import TextInputContext from "../../../Contexts/TextInputContext";
 import {PrimaryScreen} from "../../Styles/AppStyles";
 
-const RunSummary = props => {
+const RunSummaryModal = props => {
 
-    const {data, addRunPace} = useContext(RunPaceContext);
+    const {data, addRunPace} = useContext(TextInputContext);
 
     return (
         <View style={[styles.runElementContainer, {display: props.hideAddRunPaceBtn}, PrimaryScreen]}>
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default RunSummary;
+export default RunSummaryModal;

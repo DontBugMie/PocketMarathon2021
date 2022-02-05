@@ -12,6 +12,7 @@ import { SecondaryYellowColor } from '../../Styles/AppStyles';
 import { PrimaryPinkColor } from '../../Styles/AppStyles';
 import { SecondaryPinkColor } from '../../Styles/AppStyles';
 import PaceButton from "../../PaceButton/PaceButton";
+import RunSummaryModal from "../RunSummary/RunSummaryModal";
 
 
 
@@ -79,9 +80,7 @@ const TimerPaceButtonsModal = props => {
                         </LinearGradient>
                     </TouchableOpacity>    
             </Pressable>
-            
-
-            
+            <RunSummaryModal/>  
         </Modal> 
        
         
