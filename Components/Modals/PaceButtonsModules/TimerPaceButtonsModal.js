@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import { View, StyleSheet, Modal, Text, Pressable, Keyboard, Button, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Modal, Text, Pressable, Keyboard, Button, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {PrimaryScreen} from "../../Styles/AppStyles";
 import {PrimaryTextColor} from "../../Styles/AppStyles";
@@ -78,7 +78,9 @@ const TimerPaceButtonsModal = props => {
                         </LinearGradient>
                     </TouchableOpacity>    
             </Pressable>
-            <RunSummaryModal/>
+            <ScrollView horizontal={true} style={{backgroundColor:'green'}}>
+                <RunSummaryModal style={{flexDirection:'column', backgroundColor:'red'}}/>     
+            </ScrollView>
         </Modal> 
     )
 };
