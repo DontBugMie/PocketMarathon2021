@@ -6,12 +6,11 @@ const TextInputContext = React.createContext();
 export const PocketMarathonProvider = ({children}) => {
 
     // const RunPace = [{title: 'blog 1'},{title: 'blog 2'},{title: 'blog 3'}];
-    const start = "Start"
 
-    const [RunPace, SetRunPace] = useState(['hello', 'no' ]);
+    const [RunPace, SetRunPace] = useState([]);
 
     const addRunPace = () => {
-        SetRunPace([ { title: `${RunPace}`+ start}
+        SetRunPace([ ...RunPace, { title: `This is my new ${RunPace} + ${RunPace.length + 1}` }
         ]);
     };
 

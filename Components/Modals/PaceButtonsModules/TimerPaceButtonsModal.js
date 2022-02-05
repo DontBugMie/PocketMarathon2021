@@ -12,14 +12,13 @@ import { SecondaryYellowColor } from '../../Styles/AppStyles';
 import { PrimaryPinkColor } from '../../Styles/AppStyles';
 import { SecondaryPinkColor } from '../../Styles/AppStyles';
 import PaceButton from "../../PaceButton/PaceButton";
-import RunSummaryModal from "../RunSummary/RunSummaryModal";
+import  RunSummaryModal  from "../RunSummary/RunSummaryModal";
 
 
 
 const TimerPaceButtonsModal = props => {
     
     const [hidePaceBtnTextInputModal,showPaceBtnTextInputModal] = useState(false); 
-   
 
     let pace;
 
@@ -46,7 +45,6 @@ const TimerPaceButtonsModal = props => {
         console.log('hello')
         showPaceBtnTextInputModal(!hidePaceBtnTextInputModal);
         showPaceBtnTextInputModal(true);
-    
     };
 
     return (
@@ -80,10 +78,8 @@ const TimerPaceButtonsModal = props => {
                         </LinearGradient>
                     </TouchableOpacity>    
             </Pressable>
-            <RunSummaryModal/>  
+            <RunSummaryModal/>
         </Modal> 
-       
-        
     )
 };
 
